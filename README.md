@@ -1,2 +1,2 @@
 # LagrangianTraj_MF
-Scripts to compute Lagrangian trajectories
+Scripts to compute Lagrangian trajectories with ARPEGE
