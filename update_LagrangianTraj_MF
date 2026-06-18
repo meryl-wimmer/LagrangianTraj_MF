@@ -10,9 +10,9 @@
 #git checkout main
 #git pull origin main
 
-models=("ARPEGE" "ARPEGE-DDH" "AROME" "ERA5" "ICON")
+models=ARPEGE ARPEGE-DDH AROME ERA5 ICON
 
-for branch in ("ARPEGE" "ARPEGE-DDH" "AROME" "ERA5" "ICON" "labadie"); do
+for branch in ARPEGE ARPEGE-DDH AROME ERA5 ICON labadie; do
 
     echo "Mise à jour de $branch"
     git checkout $branch
