@@ -18,7 +18,7 @@ git clone https://github.com/meryl-wimmer/LagrangianTraj_MF.git
 
 or
 
-git clone git@github.com:meryl-wimmer/LagrangianTraj_MF.git
+git clone -b labadie git@github.com:meryl-wimmer/LagrangianTraj_MF.git
 
 #### 2) Create and use a python virutal environnement (named MyVenv) in Jupyter Notebook: 
 
