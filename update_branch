@@ -4,21 +4,30 @@ models="ARPEGE ARPEGE-DDH AROME ERA5 ICON AROME-Valence ARPEGE-Valence"
 
 for branch in ARPEGE ARPEGE-DDH AROME ERA5 ICON labadie;do
    echo $branch 
-   list_to_delete= echo "$models" | tr ' ' '\n' | grep -v "^$branch$" | xargs
+   list_to_delete=$(echo "$models" | tr ' ' '\n' | grep -v "^$branch$" | xargs)
    echo $list_to_delete
    
    git checkout main
-   git branch -D ARPEGE
-   git checkout -b ARPEGE
+   git branch -D $branch
+   git checkout -b $branch
+   git rm update*
    if [ $branch != "ARPEGE-DDH" ];then
       git rm DDH.ipynb
    fi
 
-   for i_model in $list_to_delete;do
-       echo Tutorial_$i_model.ipynb
-       git rm Tutorial_$i_model.ipynb
-   done
-   
+   if [ $branch != "labadie" ]; then
+      for i_model in $list_to_delete;do
+        echo "Tutorial_$i_model.ipynb"
+        git rm Tutorial_$i_model.ipynb
+      done
+   else
+       for i_model in ARPEGE ARPEGE-DDH AROME ERA5 ICON;do
+	       git rm Tutorial_$i_model.ipynb
+       done	  
+   fi
    git commit -m "Remove other model tutorials from $branch branch"
    git push --force origin $branch
 done
+
+git checkout main
+
