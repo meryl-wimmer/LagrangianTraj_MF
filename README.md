@@ -1,15 +1,14 @@
 # LagrangianTraj_MF
 
-
 ## Description: 
-Scripts to compute Lagrangian trajectories for different models
+Scripts to compute Lagrangian trajectories for different models :
 
  - AROME
  - ARPEGE
  - ICON
  - ERA5
 
-To come : LMDZ
+To come : LMDZ and adaptation for long time step
 
 ## How to use:
 
@@ -29,16 +28,17 @@ pip3 install --user ipykernel
 
 python -m ipykernel install --user --name=MyVenv
 
+pip install cfgrib # and other needed python packages that are not already installed in your virtual environnement
+
 #### 3) Open Jupyter Notebook :
 
 jupyter-notebook &
 
-Select MyVenv in Kernel/Change Kernel
+Then, select MyVenv in Kernel/Change Kernel
 
 #### 4) To run each block :
 
 Click on the play button
-
 
 ## Authors: 
  - Meryl WIMMER
