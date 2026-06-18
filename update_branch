@@ -10,9 +10,15 @@ for branch in ARPEGE ARPEGE-DDH AROME ERA5 ICON labadie;do
    git checkout main
    git branch -D ARPEGE
    git checkout -b ARPEGE
+   if [ $branch != "ARPEGE-DDH" ];then
+      git rm DDH.ipynb
+   fi
+
    for i_model in $list_to_delete;do
-	git rm Tutorial_$i_model.ipynb
+       echo Tutorial_$i_model.ipynb
+       git rm Tutorial_$i_model.ipynb
    done
+   
    git commit -m "Remove other model tutorials from $branch branch"
    git push --force origin $branch
 done
