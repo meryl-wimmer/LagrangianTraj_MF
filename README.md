@@ -5,7 +5,6 @@ Scripts to compute Lagrangian trajectories for different models :
 
  - AROME
  - ARPEGE
- - ICON
  - ERA5
 
 To come : LMDZ and adaptation for long time step
